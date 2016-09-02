@@ -34,4 +34,11 @@ this creates a named pipe in `/tmp/wspipein.fifo`
 
 Then just send data to your the WebSocket server:
 
-    tail -f <path_to_log_file> > /tmp/wspipein.fifo
+    tail -f <path_to_log_file> -n0 > /tmp/wspipein.fifo
+
+
+## daemonize
+
+Copy `scripts/gwsocket.sh` to `/root` in your server. The, run:
+
+    daemon --name=gwsocket /root/gwsocket.sh <path_to_log_file>

@@ -5,6 +5,12 @@ $(function () {
         port: '7890'
     };
 
+    /**
+     * @param needle
+     * @param haystack
+     * @param cl
+     * @returns {string|XML|void}
+     */
     function hl(needle, haystack, cl) {
         var reg = new RegExp(needle, 'gi');
         return haystack.replace(reg, function(str) {
@@ -15,8 +21,6 @@ $(function () {
     function addMessage(msg) {
         var msgs = $('.prompt .message');
         var count = msgs.length;
-
-        console.log("count= " + count);     //TODO(gb): Remove trace!!!
 
         msg = hl('GET|POST', msg, 'purple');
         msg = hl('HTTP\/1\.1|HTTP\/1\.0', msg, 'orange');
@@ -36,11 +40,9 @@ $(function () {
 
     function toggleTerms() {
         if ($('.prompt').is(':empty')) {
-            console.log('prompt is empty');        //TODO(gb): Remove trace!!!
             return;
         }
 
-        console.log("$('.prompt-load').length= " + $('.prompt-load').length);     //TODO(gb): Remove trace!!!
         if ($('.prompt-load').length) {
             $('.prompt')
                 .show();
@@ -49,19 +51,21 @@ $(function () {
 
     $('.prompt-load').typed({
         strings: [
-            'Tailing live access logs from ' + server.host + '.^500.^1000.^1000.^1500.^1600.^1700.^1800.^1900.^2000.^3000.^4000.^5000.'
+            'Tailing live access logs from ' + server.host + '^500.^1000.^1000.'
         ],
         typeSpeed: 0,
         showCursor: false,
         callback: function() {
             toggleTerms();
-        },
+        }
     });
+
+    // Socket
     var socket = new WebSocket('ws://' + server.host + ':' + server.port);
 
     // Socket open
     socket.onopen = function(event) {
-        console.log('Socket open!');        //TODO(gb): Remove trace!!!
+        console.log('Socket open...');
     };
 
     // Socket close
@@ -70,13 +74,9 @@ $(function () {
         $('.prompt').html('<span class="red">:( Nope, the connection is out. Try again later!</span>');
     };
 
-    socket.onerror = function (event) {
-        console.log(event);        //TODO(gb): Remove trace!!!
-    };
-
+    // Socket message
     socket.onmessage = function(event) {
-
-        console.log(event);        //TODO(gb): Remove trace!!!
+        console.log('New message');
 
         var lines = event.data.split(/\n/);
 
