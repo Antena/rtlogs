@@ -1,0 +1,218 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,500);
+
+body {
+    background-color: #D4D4D4;
+    font: 16px/1.528571429 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+h1[id],
+h1[id],
+h2[id],
+h3[id],
+h4[id],
+h5[id],
+h6[id],
+.page-header {
+    padding-top: 55px; margin-top: -55px;
+}
+.btn-default,
+.btn-default:hover,
+.btn-default:active,
+.btn-default:visited,
+.btn-default:focus {
+    background-color: #2F2F2F;
+    border-color: #404040;
+    color: #FFF;
+}
+.dl-horizontal dt {
+    width: 215px;
+}
+.dl-horizontal dd {
+    margin-left: 220px;
+}
+a {
+    /*text-decoration: underline;*/
+}
+.container {
+    z-index: 4;
+}
+header, footer, .navbar {
+    z-index: 5;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.container .row {
+    padding: 0px 25px;
+}
+.yep {
+    color: #EF0159;
+    font-weight: bold;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 35px;
+    top: 5px;
+}
+
+.terminal-wrapper {
+    position: relative;
+    text-align: center;
+    outline: none;
+}
+.terminal {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.35);
+    box-sizing: content-box;
+    max-width: 100%;
+    padding: 0px;
+    position: relative;
+    text-align: left;
+}
+.prompt, .prompt-load {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    overflow: hidden;
+    padding: 0;
+    margin: 0px;
+    display: block;
+    white-space: pre;
+    border: 0;
+    word-wrap: normal;
+    word-break: normal;
+    border-radius: 0;
+    border-style: solid;
+    cursor: text;
+    border-width: 0.5em;
+    font-family: Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace, 'Powerline Symbols';
+    line-height: 1.3333333333em;
+    font-size: 12px;
+    color: #CCC;
+    background-color: #121314;
+    border-color: #121314;
+    display: none;
+    width: 100%;
+}
+
+.prompt-load {
+    display: block;
+    height: 18px;
+    position: fixed;
+}
+
+.prompt {
+    padding-top: 26px;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.blue  {
+    color: #5FD7FF;
+    font-weight: bold;
+}
+.red {
+    color: #FF005F;
+    font-weight: bold;
+}
+.green {
+    color: #AFD700;
+    font-weight: bold;
+}
+.purple {
+    color: #AF87FF;
+    font-weight: bold;
+}
+.orange {
+    color: #FF8700;
+    font-weight: bold;
+}
+.gray {
+    color: #9E9E9E;
+    font-weight: bold;
+}
+.yellow {
+    color: #9E9E9E;
+    font-weight: bold;
+}
+.typeme {
+    color: #FFF;
+}
+
+.row-down.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+    flex-wrap: wrap;
+}
+.row-down.row > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.syntax {
+    border: 0;
+    color: #FFF;
+    font-family: 'Roboto Mono';
+    font-size: 13px;
+    line-height: 1.42857143;
+    margin: 0;
+    background: #292C33;
+    border-radius: 0;:
+white-space: pre;
+}
+.syntax .blue {
+    color: #5ED4EC;
+}
+.syntax .red {
+    color: #FB1D70;
+}
+.syntax .green {
+    color: #A2E106;
+}
+.syntax .purple {
+    color: #A376F0;
+}
+.syntax .orange {
+    color: #F59200;
+}
+.syntax .yellow {
+    color: #DBD26A;
+}
+.syntax .gray {
+    font-weight: normal;
+    font-style: italic;
+}
