@@ -6,10 +6,15 @@ body {
     background-color: #D4D4D4;
     font: 16px/1.528571429 'Source Sans Pro', sans-serif;
     margin: 0;
+    overflow: hidden;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .terminal-wrapper {
-    position: relative;
     text-align: center;
     outline: none;
 }
@@ -18,16 +23,17 @@ body {
     -webkit-box-sizing: content-box;
     box-shadow: 0 0 16px 5px rgba(0, 0, 0, 0.35);
     box-sizing: content-box;
-    max-width: 100%;
     padding: 0px;
-    position: relative;
     text-align: left;
+    width: 100%;
+    height: 100vh;
+    background-color: #121314;
+    display: block;
 }
 .prompt, .prompt-load {
     box-sizing: content-box;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
-    overflow: hidden;
     padding: 0;
     margin: 0px;
     display: block;
@@ -46,17 +52,15 @@ body {
     background-color: #121314;
     border-color: #121314;
     display: none;
-    width: 100%;
 }
 
 .prompt-load {
     display: block;
-    height: 18px;
-    position: fixed;
 }
 
 .prompt {
     padding-top: 26px;
+    height: 100%;
 }
 
 .typed-cursor{
